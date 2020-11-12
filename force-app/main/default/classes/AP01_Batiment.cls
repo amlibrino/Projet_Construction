@@ -25,7 +25,7 @@ public with sharing class AP01_Batiment {
                 for (Batiment__c bat : listBat) {
                     bat.Ingenieur_de_Realisation__c = mapBatimentAccount.get(Bat.id).id;
                 }  
-                    Database.update(listBat);
+                   // Database.update(listBat); l'update se fait directement par la trigger
                 } catch (Exception e) {
                     System.debug(e.getMessage());
                 }
