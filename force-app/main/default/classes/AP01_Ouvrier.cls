@@ -40,22 +40,22 @@ résultats.*/
 
 Contact myexecutant = [SELECT Id FROM Contact WHERE Id = '0034x000002JPMRAA4']; 
 Contact excutant = [SELECT Id, Owner.Email, Date_de_fin_du_Contrat__c FROM Contact WHERE Id = : myexecutant.Id ];
-    //stocker l' email
-    String ownerEmail = excutant.Owner.email;
+//stocker l' email
+String ownerEmail = excutant.Owner.email;
 
-    Messaging.SingleEmailMessage message = new Messaging.SingleEmailMessage();
-    message.toAddresses = new String[] { ownerEmail,'rasiahstarlin@gmail.com', 'hamid.benchikh@gmail.com' };
-    message.optOutPolicy = 'FILTER';
-    message.subject = 'Bonjour  Test Message';
-    message.plainTextBody = 'This is the message body. exo projet salesforce envoyer un mail dans une fonction';
-    Messaging.SingleEmailMessage[] messages = 
-        new List<Messaging.SingleEmailMessage> {message};
-            Messaging.SendEmailResult[] results = Messaging.sendEmail(messages);
-    System.debug('The email was sent successfully dqsjkldjqskjdqskldjqskldklqsj.');
-    if (results[0].success) {
-        System.debug('The email was sent successfully.');
-    } else {
-        System.debug('The email failed to send: '
-            + results[0].errors[0].message);
-    }
-    */
+Messaging.SingleEmailMessage message = new Messaging.SingleEmailMessage();
+message.toAddresses = new String[] { ownerEmail,'rasiahstarlin@gmail.com', 'hamid.benchikh@gmail.com' };
+message.optOutPolicy = 'FILTER';
+message.subject = 'Bonjour  Test Message';
+message.plainTextBody = 'This is the message body. exo projet salesforce envoyer un mail dans une fonction';
+Messaging.SingleEmailMessage[] messages = 
+    new List<Messaging.SingleEmailMessage> {message};
+        Messaging.SendEmailResult[] results = Messaging.sendEmail(messages);
+System.debug('The email was sent successfully dqsjkldjqskjdqskldjqskldklqsj.');
+if (results[0].success) {
+    System.debug('The email was sent successfully.');
+} else {
+    System.debug('The email failed to send: '
+        + results[0].errors[0].message);
+}
+*/
