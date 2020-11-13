@@ -24,10 +24,8 @@ public with sharing class AP02_Batiment {
                     Bat.Ingenieur_de_Realisation__c = newIngenieur.Id;
                     Database.update(Bat);
                 } catch (Exception e) {
-                    System.debug(e.getMessage());
-                    
+                    System.debug(e.getMessage());      
                 }
-                
             }
 /*A partir du Console Développeur, créer une classe AP01_Batiment. Dans la classe créer
 la méthode attacherIngenieur qui permet de créer/rattacher un Bâtiment à un Ingénieur

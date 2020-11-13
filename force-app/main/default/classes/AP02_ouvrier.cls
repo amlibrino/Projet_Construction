@@ -1,6 +1,4 @@
 public with sharing class AP02_ouvrier {
-    public AP02_ouvrier() {
-    }
 
 public static void envoyerMail(List<Contact> contactList) {
     List<Contact> executantList = [SELECT Owner.Email, Date_de_fin_du_Contrat__c FROM Contact WHERE ID IN : contactList];
